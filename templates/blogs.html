@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     {% for post in posts %}
+     <article class="media">
+        <div class = "media-body">
+            <div class = "article-metadata">
+                <a class = "article-author" href = "#">{{ post.author.username }}</a>
+                <span class = "article-date">{{ post.date_posted.strftime('%Y-%m-%d') }}</span>
+            </div>
+            <h3 class = "article-title">{{ post.title }}</h3>
+            <p class = "article-content">{{ post.content }}</p>
+        </div>
+     </article>
+    {% endfor %}
+{% endblock content %}
